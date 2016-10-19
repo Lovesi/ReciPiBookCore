@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16766256-F4C5-4EA9-8A2F-AA37AD508ACB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1A2833B2-F334-4892-9CF1-E11E23004523}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ReciPiBook.Client", "src\ReciPiBook.Client\ReciPiBook.Client.xproj", "{FBFE7381-186A-4057-8D64-E2329865312D}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ReciPiBook.Di", "src\ReciPiBook.Di\ReciPiBook.Di.xproj", "{6F60F572-4615-4143-991B-0725C22B56DC}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ReciPiBook.Services", "src\ReciPiBook.Services\ReciPiBook.Services.xproj", "{3C99C4A3-FE74-4EC7-88B1-46AC3DD255A5}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ReciPiBook.Api", "src\ReciPiBook.Api\ReciPiBook.Api.xproj", "{AC38E94C-1963-4686-8E1E-0E6E7A2000B9}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ReciPiBook.Entities", "src\ReciPiBook.Entities\ReciPiBook.Entities.xproj", "{4D5A4960-9DDE-4853-AB13-257BCFEF5F72}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ReciPiBook.Repository", "src\ReciPiBook.Repository\ReciPiBook.Repository.xproj", "{B18EF058-F944-463A-9442-B4BBE173C8F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBFE7381-186A-4057-8D64-E2329865312D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBFE7381-186A-4057-8D64-E2329865312D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBFE7381-186A-4057-8D64-E2329865312D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBFE7381-186A-4057-8D64-E2329865312D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F60F572-4615-4143-991B-0725C22B56DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F60F572-4615-4143-991B-0725C22B56DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F60F572-4615-4143-991B-0725C22B56DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F60F572-4615-4143-991B-0725C22B56DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C99C4A3-FE74-4EC7-88B1-46AC3DD255A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C99C4A3-FE74-4EC7-88B1-46AC3DD255A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C99C4A3-FE74-4EC7-88B1-46AC3DD255A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C99C4A3-FE74-4EC7-88B1-46AC3DD255A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC38E94C-1963-4686-8E1E-0E6E7A2000B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC38E94C-1963-4686-8E1E-0E6E7A2000B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC38E94C-1963-4686-8E1E-0E6E7A2000B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC38E94C-1963-4686-8E1E-0E6E7A2000B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D5A4960-9DDE-4853-AB13-257BCFEF5F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D5A4960-9DDE-4853-AB13-257BCFEF5F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D5A4960-9DDE-4853-AB13-257BCFEF5F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D5A4960-9DDE-4853-AB13-257BCFEF5F72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B18EF058-F944-463A-9442-B4BBE173C8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B18EF058-F944-463A-9442-B4BBE173C8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B18EF058-F944-463A-9442-B4BBE173C8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B18EF058-F944-463A-9442-B4BBE173C8F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FBFE7381-186A-4057-8D64-E2329865312D} = {16766256-F4C5-4EA9-8A2F-AA37AD508ACB}
+		{6F60F572-4615-4143-991B-0725C22B56DC} = {16766256-F4C5-4EA9-8A2F-AA37AD508ACB}
+		{3C99C4A3-FE74-4EC7-88B1-46AC3DD255A5} = {16766256-F4C5-4EA9-8A2F-AA37AD508ACB}
+		{AC38E94C-1963-4686-8E1E-0E6E7A2000B9} = {16766256-F4C5-4EA9-8A2F-AA37AD508ACB}
+		{4D5A4960-9DDE-4853-AB13-257BCFEF5F72} = {16766256-F4C5-4EA9-8A2F-AA37AD508ACB}
+		{B18EF058-F944-463A-9442-B4BBE173C8F2} = {16766256-F4C5-4EA9-8A2F-AA37AD508ACB}
+	EndGlobalSection
+EndGlobal
