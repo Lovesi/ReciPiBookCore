@@ -1,6 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using ReciPiBook.Entities;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace ReciPiBook.Repository
 {
@@ -9,10 +10,10 @@ namespace ReciPiBook.Repository
         protected readonly DbContext Context;
         protected DbSet<T> DbSet;
 
-        public Repository(RecipesDb context)
+        public Repository(IInfrastructure<IServiceProvider> context)
         {
-            Context = context;
-            DbSet = context.Set<T>();
+            Context = context as DbContext;
+            DbSet = Context.Set<T>();
         }
 
         public void Add(T entity)

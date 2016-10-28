@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,21 +15,18 @@ namespace ReciPiBook.Client
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
-                            .SetBasePath(env.ContentRootPath)
-                            .AddJsonFile("appsettings.json")
-                            .AddJsonFile($"appsettings.{env.EnvironmentName}.json");
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json")
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json");
 
             Configuration = builder.Build();
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton(Configuration);
-            services.AddMvc();
-            services.RegisterRepositories(Configuration.GetConnectionString("recipibookdb"));
-            services.RegisterServices();
+            return ServiceProviderFactory.GetServiceProvider(services, Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

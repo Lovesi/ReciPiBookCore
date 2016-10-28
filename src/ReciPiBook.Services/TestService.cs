@@ -14,7 +14,6 @@ namespace ReciPiBook.Services
 
         public string SayHello()
         {
-            _repository.Add(new UnitOfMeasure { Abbreviation = "C", Description = "Cup" });
             return "Hello world service!";
         }
     }

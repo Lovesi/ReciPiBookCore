@@ -2,9 +2,12 @@
   "version": "1.0.0",
 
   "dependencies": {
+    "Microsoft.AspNetCore.Mvc": "1.0.1",
+    "Microsoft.Extensions.Configuration": "1.0.0",
     "Microsoft.Extensions.DependencyInjection": "1.0.0",
     "Microsoft.EntityFrameworkCore": "1.0.1",
     "Microsoft.EntityFrameworkCore.SqlServer": "1.0.1",
+    "LightInject.Microsoft.DependencyInjection": "1.1.1",
     "ReciPiBook.Entities": "1.0.0-*",
     "ReciPiBook.Repository": "1.0.0-*",
     "ReciPiBook.Services": "1.0.0-*"
