@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using ReciPiBook.Entities;
 using ReciPiBook.Repository;
-using ReciPiBook.Services;
+using ReciPiBook.Services.UnitOfMeasure;
 
 namespace ReciPiBook.Di
 {
@@ -14,7 +14,7 @@ namespace ReciPiBook.Di
         {
             container.Register<IInfrastructure<IServiceProvider>, RecipesDb>("recipesdb");
             container.Register<IRepository<UnitOfMeasure>>((factory) => 
-                new Repository<UnitOfMeasure>(container.GetInstance<IInfrastructure<IServiceProvider>>("recipesdb")));
+                new Repository<UnitOfMeasure>(factory.GetInstance<IInfrastructure<IServiceProvider>>("recipesdb")));
             return container;
         }
 
@@ -26,7 +26,7 @@ namespace ReciPiBook.Di
 
         public static IServiceContainer RegisterServices(this IServiceContainer container)
         {
-            container.Register<ITestService, TestService>();
+            container.Register<IUnitOfMeasureService, UnitOfMeasureService>(new PerRequestLifeTime());
             return container;
         }
     }

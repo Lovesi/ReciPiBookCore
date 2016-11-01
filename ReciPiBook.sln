@@ -26,6 +26,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ReciPiBook.Repository", "sr
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ReciPiBook.Dtos", "src\ReciPiBook.Dtos\ReciPiBook.Dtos.xproj", "{179A5FD8-986A-4FCF-9F2B-570C1C08D01E}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ReciPiBook.Translators", "src\ReciPiBook.Translators\ReciPiBook.Translators.xproj", "{6B21C4F2-B198-4F9D-8286-A933D4BEBA79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,10 @@ Global
 		{179A5FD8-986A-4FCF-9F2B-570C1C08D01E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{179A5FD8-986A-4FCF-9F2B-570C1C08D01E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{179A5FD8-986A-4FCF-9F2B-570C1C08D01E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B21C4F2-B198-4F9D-8286-A933D4BEBA79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B21C4F2-B198-4F9D-8286-A933D4BEBA79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B21C4F2-B198-4F9D-8286-A933D4BEBA79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B21C4F2-B198-4F9D-8286-A933D4BEBA79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,5 +78,6 @@ Global
 		{4D5A4960-9DDE-4853-AB13-257BCFEF5F72} = {16766256-F4C5-4EA9-8A2F-AA37AD508ACB}
 		{B18EF058-F944-463A-9442-B4BBE173C8F2} = {16766256-F4C5-4EA9-8A2F-AA37AD508ACB}
 		{179A5FD8-986A-4FCF-9F2B-570C1C08D01E} = {16766256-F4C5-4EA9-8A2F-AA37AD508ACB}
+		{6B21C4F2-B198-4F9D-8286-A933D4BEBA79} = {16766256-F4C5-4EA9-8A2F-AA37AD508ACB}
 	EndGlobalSection
 EndGlobal

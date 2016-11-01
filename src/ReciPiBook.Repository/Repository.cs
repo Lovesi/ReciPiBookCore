@@ -9,6 +9,7 @@ namespace ReciPiBook.Repository
     {
         protected readonly DbContext Context;
         protected DbSet<T> DbSet;
+        private bool _disposed = false;
 
         public Repository(IInfrastructure<IServiceProvider> context)
         {
@@ -16,10 +17,11 @@ namespace ReciPiBook.Repository
             DbSet = Context.Set<T>();
         }
 
-        public void Add(T entity)
+        public T Add(T entity)
         {
             Context.Set<T>().Add(entity);
             Save();
+            return entity;
         }
 
         public T Get<TKey>(TKey id)
@@ -37,9 +39,31 @@ namespace ReciPiBook.Repository
             Save();
         }
 
+        public void Delete<TKey>(TKey id)
+        {
+            var toDelete = Get(id);
+            Context.Remove(toDelete);
+        }
+
         private void Save()
         {
             Context.SaveChanges();
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed) return;
+
+            if(disposing)
+                Context.Dispose();
+
+            _disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }
