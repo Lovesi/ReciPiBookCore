@@ -43,6 +43,7 @@ namespace ReciPiBook.Repository
         {
             var toDelete = Get(id);
             Context.Remove(toDelete);
+            Save();
         }
 
         private void Save()

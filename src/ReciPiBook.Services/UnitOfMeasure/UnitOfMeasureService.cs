@@ -31,7 +31,10 @@ namespace ReciPiBook.Services.UnitOfMeasure
 
         public void Update(Dtos.UnitOfMeasure uom)
         {
-            _repository.Update(uom.AsUnitOfMeasure());
+            var toUpdate = _repository.Get(uom.Id);
+            toUpdate.Abbreviation = uom.Abbreviation;
+            toUpdate.Description = uom.Description;
+            _repository.Update(toUpdate);
         }
 
         protected virtual void Dispose(bool disposing)
