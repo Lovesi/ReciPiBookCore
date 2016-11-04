@@ -4,13 +4,19 @@
   "dependencies": {
     "NETStandard.Library": "1.6.0",
     "ReciPiBook.Dtos": "1.0.0",
-    "ReciPiBook.Entities": "1.0.0-*",
-    "ReciPiBook.Repository": "1.0.0-*",
-    "ReciPiBook.Translators": "1.0.0-*"
+    "ReciPiBook.Entities": "1.0.0",
+    "ReciPiBook.Repository": "1.0.0",
+    "ReciPiBook.Translators": "1.0.0"
   },
 
   "frameworks": {
-    "netstandard1.6": {
+    "netcoreapp1.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.0.1"
+        }
+      },
       "imports": "dnxcore50"
     }
   }

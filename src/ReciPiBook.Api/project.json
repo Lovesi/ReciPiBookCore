@@ -4,11 +4,17 @@
   "dependencies": {
     "NETStandard.Library": "1.6.0",
     "Microsoft.AspNetCore.Mvc": "1.0.1",
-    "ReciPiBook.Services": "1.0.0-*"
+    "ReciPiBook.Services": "1.0.0"
   },
 
   "frameworks": {
-    "netstandard1.6": {
+    "netcoreapp1.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.0.1"
+        }
+      },
       "imports": "dnxcore50"
     }
   }
