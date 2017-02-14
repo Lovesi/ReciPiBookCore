@@ -4,7 +4,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using ReciPiBook.Entities;
 using ReciPiBook.Repository;
+using ReciPiBook.Services.Authorization;
 using ReciPiBook.Services.UnitOfMeasure;
+using ReciPiBook.Services.User;
 
 namespace ReciPiBook.Di
 {
@@ -27,6 +29,9 @@ namespace ReciPiBook.Di
         public static IServiceContainer RegisterServices(this IServiceContainer container)
         {
             container.Register<IUnitOfMeasureService, UnitOfMeasureService>(new PerRequestLifeTime());
+            container.Register<IAuthorizationService, AuthorizationService>(new PerRequestLifeTime());
+            container.Register<ITicketService, TicketService>(new PerRequestLifeTime());
+            container.Register<IUserRegistrationService, UserService>(new PerRequestLifeTime());
             return container;
         }
     }

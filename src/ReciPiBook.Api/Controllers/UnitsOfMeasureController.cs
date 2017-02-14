@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNet.Security.OAuth.Validation;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ReciPiBook.Services.UnitOfMeasure;
 
 namespace ReciPiBook.Api.Controllers
@@ -15,6 +17,7 @@ namespace ReciPiBook.Api.Controllers
 
         [HttpGet]
         [Route("{id:int}")]
+        [Authorize(ActiveAuthenticationSchemes = OAuthValidationDefaults.AuthenticationScheme)]
         public Dtos.UnitOfMeasure Get(int id) => _unitOfMeasureService.Get(id);
 
         [HttpPost]

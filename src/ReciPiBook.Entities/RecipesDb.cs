@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ReciPiBook.Entities
 {
-    public class RecipesDb : DbContext
+    public class RecipesDb : IdentityDbContext<ApplicationUser>
     {
         public RecipesDb(DbContextOptions<RecipesDb> options)
             : base(options)
@@ -16,6 +18,17 @@ namespace ReciPiBook.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.UseOpenIddict();
+
+            modelBuilder.Entity<IdentityUserLogin<string>>()
+                .HasKey(i => new { i.LoginProvider, i.ProviderKey });
+
+            modelBuilder.Entity<IdentityUserRole<string>>()
+                .HasKey(i => new { i.UserId, i.RoleId });
+
+            modelBuilder.Entity<IdentityUserToken<string>>()
+                .HasKey(x => new { x.UserId, x.LoginProvider, x.Name });
+
             modelBuilder.Entity<Ingredient>()
                 .HasOne(i => i.Recipe)
                 .WithMany(r => r.Ingredients)
