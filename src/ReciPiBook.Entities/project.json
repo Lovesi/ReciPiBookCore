@@ -5,8 +5,8 @@
     "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
     "Microsoft.EntityFrameworkCore.Tools": "1.1.0-preview4-final",
     "Microsoft.NETCore.App": "1.1.0",
-    "OpenIddict": "1.0.0-beta2-0503",
-    "OpenIddict.EntityFrameworkCore": "1.0.0-beta2-0503"
+    "OpenIddict": "1.0.0-beta2-0555",
+    "OpenIddict.EntityFrameworkCore": "1.0.0-beta2-0555"
   },
   "frameworks": {
     "netcoreapp1.1": {

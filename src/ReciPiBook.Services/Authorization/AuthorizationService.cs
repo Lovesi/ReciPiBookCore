@@ -49,48 +49,50 @@ namespace ReciPiBook.Services.Authorization
 
         private void BuildValidationFunctions()
         {
-            _validationMethods = new List<ValidateMethod>();
+            _validationMethods = new List<ValidateMethod>
+            {
+                async (user, s) =>
+                {
+                    if (!await _signInManager.CanSignInAsync(user))
+                        throw new BadRequestException(OpenIdConnectConstants.Errors.InvalidGrant,
+                            AuthorizationConstants.Errors.NotAllowed);
+                    return true;
+                },
+                async (user, s) =>
+                {
+                    if (_userManager.SupportsUserTwoFactor && await _userManager.GetTwoFactorEnabledAsync(user))
+                        throw new BadRequestException(OpenIdConnectConstants.Errors.InvalidGrant,
+                            AuthorizationConstants.Errors.NotAllowed);
+                    return true;
+                },
+                async (user, s) =>
+                {
+                    if (_userManager.SupportsUserLockout && await _userManager.IsLockedOutAsync(user))
+                        throw new BadRequestException(OpenIdConnectConstants.Errors.InvalidGrant,
+                            AuthorizationConstants.Errors.UserPass);
+                    return true;
+                },
+                async (user, s) =>
+                {
+                    if (!await _userManager.CheckPasswordAsync(user, s))
+                    {
+                        if (_userManager.SupportsUserLockout)
+                            await _userManager.AccessFailedAsync(user);
+
+                        throw new BadRequestException(OpenIdConnectConstants.Errors.InvalidGrant,
+                            AuthorizationConstants.Errors.UserPass);
+                    }
+                    return true;
+                }
+            };
 
             //Check if user can sign-in
-            _validationMethods.Add(async (user, s) =>
-            {
-                if (!await _signInManager.CanSignInAsync(user))
-                    throw new BadRequestException(OpenIdConnectConstants.Errors.InvalidGrant,
-                                                  AuthorizationConstants.Errors.NotAllowed);
-                return true;
-            });
 
             //Reject the token request if two-factor authentication has been enabled by the user.
-            _validationMethods.Add(async (user, s) =>
-            {
-                if (_userManager.SupportsUserTwoFactor && await _userManager.GetTwoFactorEnabledAsync(user))
-                    throw new BadRequestException(OpenIdConnectConstants.Errors.InvalidGrant,
-                                                  AuthorizationConstants.Errors.NotAllowed);
-                return true;
-            });
 
             //Ensure the user is not already locked out.
-            _validationMethods.Add(async (user, s) =>
-            {
-                if (_userManager.SupportsUserLockout && await _userManager.IsLockedOutAsync(user))
-                    throw new BadRequestException(OpenIdConnectConstants.Errors.InvalidGrant,
-                                                  AuthorizationConstants.Errors.UserPass);
-                return true;
-            });
 
             //Ensure the password is valid.
-            _validationMethods.Add(async (user, s) =>
-            {
-                if (!await _userManager.CheckPasswordAsync(user, s))
-                {
-                    if (_userManager.SupportsUserLockout)
-                        await _userManager.AccessFailedAsync(user);
-
-                    throw new BadRequestException(OpenIdConnectConstants.Errors.InvalidGrant,
-                                                  AuthorizationConstants.Errors.UserPass);
-                }
-                return true;
-            });
         }
 
         private async Task<ApplicationUser> GetUser(string username)
@@ -114,8 +116,8 @@ namespace ReciPiBook.Services.Authorization
             {
                 if (await validation(user, password))
                     continue;
-                else
-                    return false;
+
+                return false;
             }
 
             return true;

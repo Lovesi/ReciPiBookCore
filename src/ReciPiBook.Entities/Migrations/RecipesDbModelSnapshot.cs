@@ -2,13 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
-using ReciPiBook.Entities;
 
 namespace ReciPiBook.Entities.Migrations
 {
     [DbContext(typeof(RecipesDb))]
-    partial class RecipesDbModelSnapshot : ModelSnapshot
+    class RecipesDbModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

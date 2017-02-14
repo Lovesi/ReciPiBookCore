@@ -9,12 +9,12 @@ namespace ReciPiBook.Repository
     {
         protected readonly DbContext Context;
         protected DbSet<T> DbSet;
-        private bool _disposed = false;
+        private bool _disposed;
 
         public Repository(IInfrastructure<IServiceProvider> context)
         {
             Context = context as DbContext;
-            DbSet = Context.Set<T>();
+            DbSet = Context?.Set<T>();
         }
 
         public T Add(T entity)

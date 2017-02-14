@@ -7,7 +7,7 @@ namespace ReciPiBook.Services.UnitOfMeasure
     public class UnitOfMeasureService : IUnitOfMeasureService
     {
         private readonly IRepository<Entities.UnitOfMeasure> _repository;
-        private bool _disposed = false;
+        private bool _disposed;
 
         public UnitOfMeasureService(IRepository<Entities.UnitOfMeasure> repository)
         {

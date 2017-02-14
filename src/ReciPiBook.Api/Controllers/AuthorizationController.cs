@@ -8,7 +8,7 @@ namespace ReciPiBook.Api.Controllers
 {
     public class AuthorizationController : Controller
     {
-        private IAuthorizationService _authorizationService;
+        private readonly IAuthorizationService _authorizationService;
 
         public AuthorizationController(IAuthorizationService authorizationService)
         {

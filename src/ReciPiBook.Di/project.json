@@ -2,17 +2,18 @@
   "version": "1.0.0",
 
   "dependencies": {
-    "LightInject.Microsoft.DependencyInjection": "1.1.1",
+    "LightInject": "5.0.1",
+    "LightInject.Microsoft.DependencyInjection": "2.0.1",
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.1.0",
-    "Microsoft.AspNetCore.Mvc": "1.1.0",
+    "Microsoft.AspNetCore.Mvc": "1.1.1",
     "Microsoft.EntityFrameworkCore": "1.1.0",
     "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
     "Microsoft.Extensions.Configuration": "1.1.0",
     "Microsoft.Extensions.DependencyInjection": "1.1.0",
     "Microsoft.NETCore.App": "1.1.0",
-    "OpenIddict": "1.0.0-beta2-0503",
-    "OpenIddict.EntityFrameworkCore": "1.0.0-beta2-0503",
-    "OpenIddict.Mvc": "1.0.0-beta2-0503",
+    "OpenIddict": "1.0.0-beta2-0555",
+    "OpenIddict.EntityFrameworkCore": "1.0.0-beta2-0555",
+    "OpenIddict.Mvc": "1.0.0-beta2-0555",
     "ReciPiBook.Entities": "1.0.0",
     "ReciPiBook.Repository": "1.0.0",
     "ReciPiBook.Services": "1.0.0"

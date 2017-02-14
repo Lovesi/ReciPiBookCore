@@ -7,12 +7,12 @@ namespace ReciPiBook.Services.Authorization.Exceptions
     {
         public OpenIdConnectResponse Response { get; set; }
 
-        public BadRequestException(string Error, string ErrorDescription)
+        public BadRequestException(string error, string errorDescription)
         {
             Response = new OpenIdConnectResponse
             {
-                Error = Error,
-                ErrorDescription = ErrorDescription
+                Error = error,
+                ErrorDescription = errorDescription
             };
         }
     }
